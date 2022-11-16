@@ -1,4 +1,4 @@
-tml,
+html,
 body {
   font-family: 'Amazon Ember';
   width: 100%;
@@ -76,7 +76,7 @@ nav {
 }
 
 .card-title a {
-  color: #2e2e2e;
+  color: #fa9c23;
 }
 
 .card-title a:hover {
@@ -448,8 +448,8 @@ footer {
 }
 
 #edit_profile {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #f8ce45;
+  border-color: #f8ce45;
 }
 
 /* Confirm Order */
@@ -460,8 +460,8 @@ footer {
 }
 
 .update-btn {
-  background-color: #fa9c23;
-  border-color: #fa9c23;
+  background-color: #f8ce45;
+  border-color: #f8ce45;
   color: white;
 }
 
@@ -502,7 +502,7 @@ footer {
 #sidebar {
   min-width: 100%;
   max-width: 100%;
-  background: #232f3e;
+  background: #f8ce45;
   color: #fff;
   transition: all 0.3s;
 }
@@ -513,12 +513,12 @@ footer {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #232f3e;
+  background: #f8ce45;
 }
 
 #sidebar ul.components {
   padding: 5px 0px;
-  border-bottom: 1px solid #232f3e;
+  border-bottom: 1px solid #f8ce45;
 }
 
 #sidebar ul li a {
@@ -530,7 +530,7 @@ footer {
 }
 
 #sidebar ul li a:hover {
-  color: #232f3e;
+  color: #f8ce45;
   background: #fff;
 }
 
@@ -541,7 +541,7 @@ footer {
 #sidebar ul li.active>a,
 a[aria-expanded='true'] {
   color: #fff;
-  background: #232f3e;
+  background: #f8ce45;
 }
 
 a[data-toggle='collapse'] {
@@ -559,7 +559,7 @@ a[data-toggle='collapse'] {
 ul ul a {
   font-size: 1rem !important;
   padding-left: 30px !important;
-  background: #232f3e;
+  background: #f8ce45;
 }
 
 ul.CTAs {
