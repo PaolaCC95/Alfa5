@@ -24,7 +24,9 @@ import { UpdateProduct } from './components/admin/UpdateProduct';
 import { Shipping } from './components/cart/Shipping';
 import { ConfirmOrder } from './components/cart/ConfirmOrder';
 import { Payment } from './components/cart/Payment';
-import { Success } from './components/cart/Success'
+import { Success } from './components/cart/Success';
+import { ListOrder } from './components/order/ListOrder';
+import { OrderDetails } from './components/order/OrderDetails';
 
 function App() {
   useEffect(() => {
@@ -71,6 +73,12 @@ function App() {
 
             <Route path="/success"
               element={<ProtectedRoute><Success /></ProtectedRoute>} />
+
+            <Route path="/myOrders"
+              element={<ProtectedRoute><ListOrder /></ProtectedRoute>} />
+
+            <Route path="/order/:id"
+              element={<ProtectedRoute><OrderDetails /></ProtectedRoute>} />
 
 
 

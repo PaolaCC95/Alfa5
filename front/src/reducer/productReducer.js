@@ -20,6 +20,10 @@ import {
     UPDATE_PRODUCT_SUCCESS,
     UPDATE_PRODUCT_FAIL,
     UPDATE_PRODUCT_RESET,
+    NEW_REVIEW_REQUEST,
+    NEW_REVIEW_SUCCESS,
+    NEW_REVIEW_FAIL,
+    NEW_REVIEW_RESET,
 } from "../constants/productConstants";
 
 //Ver productos
@@ -40,11 +44,11 @@ export const productsReducer = (state = { products: [] }, action) => {
                 resPerPage: action.payload.resPerPage,
                 filteredProductsCount: action.payload.filteredProductsCount
             }
-        
+
         case ADMIN_PRODUCTS_SUCCESS:
             return {
-                loading:false,
-                products:action.payload
+                loading: false,
+                products: action.payload
             }
 
         case ALL_PRODUCTS_FAIL:
@@ -98,11 +102,11 @@ export const productDetailsReducer = (state = { product: {} }, action) => {
     }
 }
 
-export const newProductReducer = (state={ product:{} }, action )=>{
-    switch(action.type){
+export const newProductReducer = (state = { product: {} }, action) => {
+    switch (action.type) {
 
         case NEW_PRODUCT_REQUEST:
-            return{
+            return {
                 ...state,
                 loading: true
             }
@@ -115,20 +119,20 @@ export const newProductReducer = (state={ product:{} }, action )=>{
             }
 
         case NEW_PRODUCT_FAIL:
-            return{
+            return {
                 ...state,
-                error:action.payload
+                error: action.payload
             }
-            
+
         case NEW_PRODUCT_RESET:
-            return{
+            return {
                 ...state,
-                success:false
+                success: false
             }
         case CLEAR_ERRORS:
             return {
                 ...state,
-                error:null
+                error: null
             }
 
         default:
@@ -136,46 +140,84 @@ export const newProductReducer = (state={ product:{} }, action )=>{
     }
 }
 
-export const productReducer= (state = {}, action)=>{
-    switch(action.type){
+export const productReducer = (state = {}, action) => {
+    switch (action.type) {
         case DELETE_PRODUCT_REQUEST:
         case UPDATE_PRODUCT_REQUEST:
-            return{
-                ...state, 
-                loading:true
+            return {
+                ...state,
+                loading: true
             }
         case DELETE_PRODUCT_SUCCESS:
-            return{
+            return {
                 ...state,
                 loading: false,
                 isDeleted: action.payload
             }
 
         case UPDATE_PRODUCT_SUCCESS:
-            return{
+            return {
                 ...state,
                 loading: false,
                 isUpdated: action.payload
             }
-            
+
         case DELETE_PRODUCT_FAIL:
         case UPDATE_PRODUCT_FAIL:
-            return{
+            return {
                 ...state,
                 error: action.payload
             }
-            
+
         case UPDATE_PRODUCT_RESET:
-            return{
+            return {
                 ...state,
                 isUpdated: false
             }
         case CLEAR_ERRORS:
             return {
-                error:null
+                error: null
             }
         default:
             return state
     }
 }
 
+//REDUCER PARA DEJAR UNA OPINION (REVIEW) Y CALIFICACION (RATING)
+export const newReviewReducer = (state = {}, action) => {
+    switch (action.type) {
+
+        case NEW_REVIEW_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+
+        case NEW_REVIEW_SUCCESS:
+            return {
+                loading: false,
+                success: action.payload
+            }
+
+        case NEW_REVIEW_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+
+        case NEW_REVIEW_RESET:
+            return {
+                ...state,
+                success: false
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state
+    }
+}
