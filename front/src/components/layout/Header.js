@@ -4,17 +4,17 @@ import { Link } from "react-router-dom"
 import { Search } from './Search'
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
-import { logout} from "../../actions/userActions"
+import { logout } from "../../actions/userActions"
 
 const Header = () => {
-    const {cartItems} = useSelector(state=>state.cart)
-    
-    const alert= useAlert();
-    const dispatch= useDispatch();
+    const { cartItems } = useSelector(state => state.cart)
+
+    const alert = useAlert();
+    const dispatch = useDispatch();
 
     const { user, loading } = useSelector(state => state.auth)
 
-    const logoutHandler = () =>{
+    const logoutHandler = () => {
         dispatch(logout());
         alert.success("LogOut exitoso")
     }
@@ -51,7 +51,7 @@ const Header = () => {
                             <div className='dropdown-menu' aria-labelledby='dropDownMenu'>
                                 {/*Preguntamos el rol de quien esta online*/}
                                 {user && user.role === "admin" && (
-                                    <Link className="dropdown-item" to="/dashboard">Adm. Productos</Link>
+                                    <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                                 )}
 
                                 <Link className="dropdown-item" to="/myOrders">Pedidos</Link>
